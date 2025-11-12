@@ -1,0 +1,33 @@
+.card {
+  width: 323px;
+  border-radius: 12px;
+  border: 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card__name {
+  position: absolute;
+  top: 15px;
+  margin: 0;
+  color: #00000099;
+  font-family: "Cabinet", Arial, sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #fff;
+  padding: 2px 12px;
+
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__image {
+  width: 100%;
+  border-radius: inherit;
+}

@@ -1,0 +1,48 @@
+.modal {
+  background-color: #0000004d;
+
+  font-family: "Cabinet", Arial, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+.modal__is-open {
+  visibility: visible;
+}
+
+.modal__content {
+  background-color: #fff;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.modal__close-button {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-image: url(../../assets/close-button.png);
+  background-size: cover;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  cursor: pointer;
+}
+.modal__text {
+  margin: 20px 0 32px 32px;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
