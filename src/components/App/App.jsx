@@ -8,6 +8,7 @@ import ItemModal from "../ItemModal/ItemModal.jsx";
 import { getWeatherData } from "../../utils/weatherApi.js";
 import { coordinates, apiKey } from "../../utils/constants.js";
 import { filterWeatherData } from "../../utils/weatherApi.js";
+import { defaultClothingItems } from "../../utils/constants.js";
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
@@ -16,6 +17,7 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
@@ -32,30 +34,47 @@ function App() {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.err);
+      .catch(console.error);
   }, []);
   return (
     <div className="page">
       <div className="page__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
+        <Main
+          weatherData={weatherData}
+          handleCardClick={handleCardClick}
+          clothingItems={clothingItems}
+        />
         <Footer />
       </div>
       <ModalWithForm
         titleText="New garment"
         buttonText="Add garment"
-        activeModal={activeModal}
+        isOpen={activeModal === "add-garment"}
+        name="add-garment"
         handleCloseClick={closeActiveModal}
       >
-        <label className="modal__input-label" htmlFor="Name">
+        <label className="modal__input-label" htmlFor="name">
           Name
         </label>
-        <input className="modal__input" type="text" placeholder="Name" />
+        <input
+          className="modal__input"
+          type="text"
+          id="name"
+          placeholder="Name"
+          required
+        />
 
-        <label className="modal__input-label" htmlFor="Image URL">
-          Image
+        <label className="modal__input-label" htmlFor="image-url">
+          Image URL
         </label>
-        <input className="modal__input" type="url" placeholder="Image URL" />
+        <input
+          className="modal__input"
+          type="url"
+          id="image-url"
+          placeholder="Image URL"
+          required
+        />
         <div className="modal__radio-container">
           <p className="modal__input-label">Select the weather type:</p>
           <label className="modal__radio">
@@ -65,6 +84,7 @@ function App() {
               name="weather"
               value="hot"
               id="hot"
+              required
             />
             <span className="modal__radio-text">Hot</span>
           </label>
@@ -94,6 +114,7 @@ function App() {
         activeModal={activeModal}
         card={selectedCard}
         handleCloseClick={closeActiveModal}
+        isOpen={activeModal === "cardPreview"}
       />
     </div>
   );
