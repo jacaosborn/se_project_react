@@ -1,11 +1,5 @@
 import "./ItemModal.css";
-function ItemModal({
-  activeModal,
-  card,
-  handleCloseClick,
-  setActiveModal,
-  handleCardClick,
-}) {
+function ItemModal({ activeModal, card, handleCloseClick }) {
   return (
     <div
       className={`modal ${

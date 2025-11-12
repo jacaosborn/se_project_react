@@ -3,7 +3,7 @@ function ModalWithForm({
   titleText,
   children,
   buttonText,
-  activeModal,
+  name,
   handleCloseClick,
   isOpen,
 }) {
