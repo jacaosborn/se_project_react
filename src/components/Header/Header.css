@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 700;
-
+  font-family: "Cabinet", Arial, sans-serif;
   font-size: 20px;
   line-height: 24px;
   max-width: 1360px;
@@ -36,9 +36,15 @@
   gap: 1rem;
   align-items: center;
   border: none;
+  cursor: pointer;
 }
 
 .header__avatar {
   width: 40px;
   height: 40px;
+}
+
+.header__profile-nav-link {
+  text-decoration: none;
+  color: inherit;
 }

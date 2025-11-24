@@ -1,0 +1,23 @@
+.ClothesSection {
+  width: calc(100% - 385px);
+  min-height: fit-content;
+  margin-top: 20px;
+}
+
+.ClothesSection__add-clothes-btn {
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+  color: #00000099;
+}
+
+.ClothesSection__cards-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: 16px;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+  gap: 21px;
+}

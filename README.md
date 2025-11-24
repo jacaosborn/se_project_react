@@ -5,6 +5,7 @@
 - Intro
 - Technologies and methodology
 - GitHub Page
+- Video overview
 - Planned additions
 
 ### Intro
@@ -19,6 +20,10 @@ The project utilizes Javascript, React, Vite, HTML, and CSS to create a responsi
 
 https://github.com/jacaosborn/se_project_react
 
+### Video overview
+
+https://www.loom.com/share/a00f8183bf4d4fc19d40749f267f4c6c
+
 ### Planned additions
 
-Currently this is a demo site. In the future I will be adding additional functionality such as having the main weather banner update based on the time of day and temperature as well as the ability for the user to add their own clothing items with images and descriptions.
+Currently this is a demo site. In the future I will be adding additional functionality such as having the main weather banner update based on the time of day and temperature as well as adding additional UI and style elements.

@@ -8,7 +8,7 @@ function ItemCard({ itemProp, onCardClick }) {
       <h2 className="card__name">{itemProp.name}</h2>
       <img
         onClick={handleCardClick}
-        src={itemProp.link}
+        src={itemProp.imageUrl}
         alt={itemProp.name}
         className="card__image"
       />

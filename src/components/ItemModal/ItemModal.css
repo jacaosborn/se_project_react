@@ -1,6 +1,6 @@
 .modal {
   background-color: #0000004d;
-
+  max-height: 100vh;
   font-family: "Cabinet", Arial, sans-serif;
   position: fixed;
   top: 0;
@@ -44,4 +44,17 @@
   font-size: 20px;
   line-height: 24px;
   color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.modal__delete-button {
+  margin: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ff4d00;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }

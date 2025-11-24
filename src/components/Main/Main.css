@@ -1,9 +1,9 @@
-.cards__weather-statement {
+.main__weather-statement {
   font-weight: 700;
   font-style: bold;
   font-size: 20px;
 }
-.cards__list {
+.main__cards-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
