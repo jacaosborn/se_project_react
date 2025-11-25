@@ -47,7 +47,7 @@ function App() {
     };
     return addItem(newCardData)
       .then((data) => {
-        setClothingItems([...clothingItems, data]);
+        setClothingItems([data, ...clothingItems]);
       })
       .then(closeActiveModal)
 

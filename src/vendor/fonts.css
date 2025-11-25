@@ -2,12 +2,12 @@
   font-family: "Cabinet";
   font-style: normal;
   font-weight: 500;
-  src: url("./fonts/CabinetGrotest-Medium.ttf") format("truetype");
+  src: url("./fonts/CabinetGrotesk-Medium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Cabinet";
   font-style: bold;
   font-weight: 700;
-  src: url("./fonts/Poppins-Bold.ttf") format("truetype");
+  src: url("./fonts/CabinetGrotesk-Bold.ttf") format("truetype");
 }

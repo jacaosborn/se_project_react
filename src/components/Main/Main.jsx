@@ -19,6 +19,7 @@ function Main({ weatherData, handleCardClick, clothingItems }) {
             .filter((item) => {
               return item.weather === weatherData.type;
             })
+            .reverse()
             .map((item) => {
               return (
                 <ItemCard

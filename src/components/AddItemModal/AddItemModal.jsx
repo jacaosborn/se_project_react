@@ -1,4 +1,3 @@
-import { requestFormReset } from "react-dom";
 import useForm from "../../hooks/useForm";
 
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -21,8 +20,9 @@ const AddItemModal = ({
       imageUrl: values.imageUrl,
       weather: values.weather,
     };
-    onAddItem(newItem);
-    setValues(defaultValues);
+    onAddItem(newItem).then(() => {
+      setValues(defaultValues);
+    });
   }
   return (
     <ModalWithForm
