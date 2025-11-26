@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./Profile.css";
 
 import Sidebar from "../Sidebar/Sidebar.jsx";

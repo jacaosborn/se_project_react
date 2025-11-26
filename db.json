@@ -103,12 +103,6 @@
       "_id": 17
     },
     {
-      "name": "test",
-      "imageUrl": "https://www.shutterstock.com/shutterstock/photos/2457990309/display_1500/stock-photo-traveler-woman-with-arms-raised-in-triumph-on-a-beach-at-sunset-silhouetted-against-vibrant-sky-2457990309.jpg",
-      "weather": "cold",
-      "_id": 18
-    },
-    {
       "name": "aa",
       "imageUrl": "https://www.shutterstock.com/shutterstock/photos/2457990309/display_1500/stock-photo-traveler-woman-with-arms-raised-in-triumph-on-a-beach-at-sunset-silhouetted-against-vibrant-sky-2457990309.jpg",
       "weather": "warm",

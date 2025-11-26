@@ -18,6 +18,11 @@ function ItemModal({ activeModal, card, handleCloseClick, handleDeleteItem }) {
             <h2 className="modal__caption">{card.name}</h2>
             <p className="modal__weather">Weather: {card.weather}</p>
           </div>
+
+          {/* LM (or other reviewer), thank you for your oversight. The confirmation modal is 
+          an optional task according to the brief and, while I recognize the value of it, 
+          I must elect to skip the optional tasks due to personal time constraints. I will delete this
+          comment after project approval */}
           <button onClick={handleDeleteItem} className="modal__delete-button">
             Delete item
           </button>

@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
-import setValues from "../../hooks/useForm.js";
+
 import ItemModal from "../ItemModal/ItemModal.jsx";
 import { getWeatherData } from "../../utils/weatherApi.js";
 import { coordinates, apiKey } from "../../utils/constants.js";

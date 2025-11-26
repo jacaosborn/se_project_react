@@ -28,4 +28,4 @@ function removeItem(id) {
   }).then(handleServerResponse);
 }
 
-export { addItem, removeItem, getInitialItems };
+export { addItem, removeItem, getInitialItems, handleServerResponse };
