@@ -1,5 +1,19 @@
 import "./ItemModal.css";
-function ItemModal({ activeModal, card, handleCloseClick, handleDeleteItem }) {
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import { useContext } from "react";
+
+function ItemModal({
+  activeModal,
+  card,
+  handleCloseClick,
+  handleDeleteItem,
+  handleCardLike,
+}) {
+  const currentUser = useContext(CurrentUserContext);
+  const isOwner = currentUser && card.owner === currentUser._id;
+  const itemDeleteButtonClassName = `modal__delete-button ${
+    isOwner ? "" : "modal__delete-button_hidden"
+  }`;
   return (
     <div
       className={`modal ${
@@ -19,11 +33,10 @@ function ItemModal({ activeModal, card, handleCloseClick, handleDeleteItem }) {
             <p className="modal__weather">Weather: {card.weather}</p>
           </div>
 
-          {/* LM (or other reviewer), thank you for your oversight. The confirmation modal is 
-          an optional task according to the brief and, while I recognize the value of it, 
-          I must elect to skip the optional tasks due to personal time constraints. I will delete this
-          comment after project approval */}
-          <button onClick={handleDeleteItem} className="modal__delete-button">
+          <button
+            onClick={handleDeleteItem}
+            className={itemDeleteButtonClassName}
+          >
             Delete item
           </button>
         </div>

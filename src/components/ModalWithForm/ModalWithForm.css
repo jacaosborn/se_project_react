@@ -51,12 +51,27 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  color: #000000;
+  transition: color 0.2s;
 }
+
+.modal__input-label--invalid {
+  color: #ff4d00;
+}
+
 .modal__input {
   border: none;
   border-bottom: 1px solid #000000;
   margin: 0 0 24px 28px;
+  color: #000000;
+  transition: color 0.2s, border-color 0.2s;
 }
+
+.modal__input--invalid {
+  color: #ff4d00;
+  border-bottom-color: #ff4d00;
+}
+
 .modal__radio-container {
   display: flex;
   flex-direction: column;
@@ -72,6 +87,10 @@
   font-size: 16px;
   line-height: 20px;
 }
+.modal__buttons {
+  display: flex;
+}
+
 .modal__save-button {
   margin: 0 0 36px 28px;
   color: white;
@@ -89,4 +108,13 @@
 .modal__save-button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+}
+.modal__secondary-button {
+  margin: 0, 0, 44px, 12px;
+  position: relative;
+  bottom: 5px;
+  left: 12px;
+  font-family: "Cabinet", Arial, sans-serif;
+  color: #00000080;
+  cursor: pointer;
 }

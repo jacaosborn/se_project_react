@@ -9,9 +9,65 @@
   align-items: center;
   border: none;
   cursor: pointer;
+  padding-left: 40px;
+  margin-top: 20px;
 }
 
-.Sidebar__avatar {
-  width: 40px;
-  height: 40px;
+.Sidebar__avatarUrl {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.sidebar__avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.sidebar__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(118, 182, 238);
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.sidebar__button-container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+.sidebar__button {
+  font-family: "Cabinet", Arial, sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+.Sidebar__edit-button {
+  margin-bottom: 8px;
 }
