@@ -11,7 +11,7 @@ import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import { getWeatherData } from "../../utils/weatherApi.js";
 import { coordinates, apiKey } from "../../utils/constants.js";
 import { filterWeatherData } from "../../utils/weatherApi.js";
-// import { defaultClothingItems } from "../../utils/constants.js";
+
 import { BrowserRouter, Navigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
@@ -57,7 +57,7 @@ function App() {
           return Promise.reject(`Error: ${res.status}`);
         })
         .then((userData) => {
-          // Token is valid! Log user in automatically
+          // Token is valid - Log user in automatically
           setCurrentUser(userData);
           setIsLoggedIn(true);
         })
@@ -147,12 +147,6 @@ function App() {
   };
   const onLogin = (formInputs, setIsPasswordInvalid) => {
     login(formInputs)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
       .then((data) => {
         // Store the token
         localStorage.setItem("jwt", data.token);
@@ -161,7 +155,6 @@ function App() {
         setCurrentUser(data.user);
         setIsLoggedIn(true);
 
-        // Close the modal
         closeActiveModal();
       })
       .catch((err) => {
@@ -172,14 +165,8 @@ function App() {
       });
   };
 
-  const onRegistration = ({ email, password, name, avatarUrl }) => {
-    register({ email, password, name, avatarUrl })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
+  const onRegistration = ({ email, password, name, avatar }) => {
+    register({ email, password, name, avatar })
       .then((data) => {
         // Store the token
         localStorage.setItem("jwt", data.token);
@@ -188,7 +175,6 @@ function App() {
         setCurrentUser(data.user);
         setIsLoggedIn(true);
 
-        // Close the modal
         closeActiveModal();
       })
       .catch((err) => {
@@ -196,9 +182,9 @@ function App() {
       });
   };
 
-  const onEdit = ({ name, avatarUrl }) => {
+  const onEdit = ({ name, avatar }) => {
     const token = localStorage.getItem("jwt");
-    editProfile({ name, avatarUrl }, token)
+    editProfile({ name, avatar }, token)
       .then((data) => {
         setCurrentUser(data);
         closeActiveModal();

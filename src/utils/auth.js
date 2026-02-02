@@ -1,24 +1,27 @@
 const baseUrl = "http://localhost:3001";
 
-export const register = ({ email, password, name, avatarUrl }) => {
+const handleServerResponse = (res) =>
+  res.ok ? res.json() : Promise.reject(res.status);
+
+export const register = ({ email, password, name, avatar }) => {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email, password, name, avatarUrl }),
-  });
+    body: JSON.stringify({ email, password, name, avatar }),
+  }).then(handleServerResponse);
 };
 
 // Login existing user
 export const login = ({ email, password }) => {
-  return fetch(`${baseUrl}/login`, {
+  return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  });
+  }).then(handleServerResponse);
 };
 
 // Check token validity
@@ -29,7 +32,7 @@ export const checkToken = (token) => {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-  });
+  }).then(handleServerResponse);
 };
 
 // Get items (public - no token needed)

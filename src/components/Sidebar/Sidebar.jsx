@@ -9,9 +9,9 @@ function Avatar({ user }) {
 
   return (
     <div className="sidebar__avatar">
-      {user?.avatarUrl ? (
+      {user?.avatar ? (
         <img
-          src={user.avatarUrl}
+          src={user.avatar}
           alt={user.name}
           className="sidebar__avatar-image"
         />

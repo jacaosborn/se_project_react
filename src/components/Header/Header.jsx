@@ -12,8 +12,8 @@ function Avatar({ user }) {
 
   return (
     <div className="header__avatar">
-      {user.avatarUrl ? (
-        <img src={user.avatarUrl} alt={user.name} className="avatar__image" />
+      {user.avatar ? (
+        <img src={user.avatar} alt={user.name} className="avatar__image" />
       ) : (
         <div className="header__avatar-placeholder">
           {getInitial(user.name)}

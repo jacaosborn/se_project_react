@@ -10,9 +10,9 @@ function ClothesSection({
   handleCardLike,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  const userItems = clothingItems.filter(
-    (item) => item.owner === currentUser._id
-  );
+  const userItems = currentUser
+    ? clothingItems.filter((item) => item.owner === currentUser._id)
+    : [];
   return (
     <div className="ClothesSection">
       Your items

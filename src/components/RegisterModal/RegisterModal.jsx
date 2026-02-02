@@ -17,7 +17,7 @@ const RegisterModal = ({
     email: "",
     password: "",
     name: "",
-    avatarUrl: "",
+    avatar: "",
   };
   const { values, handleChange, setValues } = useForm(defaultValues);
   const [isEmailInvalid, setIsEmailInvalid] = useState(false);
@@ -29,12 +29,12 @@ const RegisterModal = ({
 
   function handleSubmit(event) {
     event.preventDefault();
-    const { email, password, name, avatarUrl } = values;
+    const { email, password, name, avatar } = values;
     if (!isValidEmail(email)) {
       setIsEmailInvalid(true);
       return;
     }
-    onRegistration({ email, password, name, avatarUrl });
+    onRegistration({ email, password, name, avatar });
   }
 
   return (
@@ -99,10 +99,10 @@ const RegisterModal = ({
       <input
         className="modal__input"
         type="url"
-        name="avatarUrl"
+        name="avatar"
         id="avatar-url"
         placeholder="Avatar URL"
-        value={values.avatarUrl}
+        value={values.avatar}
         onChange={handleChange}
         required
       />

@@ -14,41 +14,25 @@ function EditProfileModal({
   const currentUser = useContext(CurrentUserContext);
   const defaultValues = {
     name: currentUser?.name || "",
-    avatarUrl: currentUser?.avatarUrl || "",
+    avatar: currentUser?.avatar || "",
   };
   const { values, handleChange, setValues } = useForm(defaultValues);
-  const { name, avatarUrl } = values;
+  const { name, avatar } = values;
 
   // Update form values when modal opens or currentUser changes
   useEffect(() => {
     if (activeModal === "edit-profile") {
       setValues({
         name: currentUser?.name || "",
-        avatarUrl: currentUser?.avatarUrl || "",
+        avatar: currentUser?.avatar || "",
       });
     }
   }, [activeModal, currentUser, setValues]);
 
   function handleSubmit(event) {
     event.preventDefault();
-    onEdit({ name, avatarUrl });
+    onEdit({ name, avatar });
   }
-  // Form state
-  // const [name, setName] = useState("");
-  // const [avatar, setAvatar] = useState("");
-
-  // Pre-fill form with current user data when modal opens
-  // useEffect(() => {
-  //   if (activeModal === "edit-profile") {
-  //     setName(currentUser.name);
-  //     setAvatar(currentUser.avatar);
-  //   }
-  // }, [activeModal, currentUser]);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   onUpdateProfile({ name, avatar });
-  // };
 
   return (
     <ModalWithForm
@@ -83,9 +67,9 @@ function EditProfileModal({
         type="url"
         className="modal__input"
         id="profile-avatar"
-        name="avatarUrl"
+        name="avatar"
         placeholder="Avatar URL"
-        value={avatarUrl}
+        value={avatar}
         onChange={handleChange}
       />
     </ModalWithForm>
