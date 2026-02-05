@@ -50,12 +50,6 @@ function App() {
     if (token) {
       // Token exists, but is it still valid?
       checkToken(token)
-        .then((res) => {
-          if (res.ok) {
-            return res.json();
-          }
-          return Promise.reject(`Error: ${res.status}`);
-        })
         .then((userData) => {
           // Token is valid - Log user in automatically
           setCurrentUser(userData);

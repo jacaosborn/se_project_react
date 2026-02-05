@@ -43,6 +43,8 @@
   cursor: pointer;
   width: 100%;
   border-radius: inherit;
+  height: 328px;
+  object-fit: cover;
 }
 
 .card__like-button {

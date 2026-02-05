@@ -63,3 +63,8 @@
 .modal__delete-button_hidden {
   visibility: hidden;
 }
+.modal__image {
+  width: 498px;
+  height: 498px;
+  object-fit: cover;
+}

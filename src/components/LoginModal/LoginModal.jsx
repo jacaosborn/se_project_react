@@ -23,12 +23,13 @@ const LoginModal = ({
   const [isEmailInvalid, setIsEmailInvalid] = useState(false);
   const [isPasswordInvalid, setIsPasswordInvalid] = useState(false);
 
-  // Reset password error when modal opens
+  // Reset password error and form when modal opens
   useEffect(() => {
     if (activeModal === "login-form") {
       setIsPasswordInvalid(false);
+      setValues(defaultValues);
     }
-  }, [activeModal]);
+  }, [activeModal, setValues]);
 
   const handleEmailChange = (e) => {
     handleChange(e);
@@ -48,7 +49,6 @@ const LoginModal = ({
       return;
     }
     onLogin({ email, password }, setIsPasswordInvalid);
-    setValues(defaultValues);
   }
   return (
     <ModalWithForm
